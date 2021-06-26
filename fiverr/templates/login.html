@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="body_login">
+
+    <div class="card_login">
+
+
+        <div class="one">
+            <h1>Sign In to Fiverr</h1>
+          </div>
+        
+        <form class="from_login" method="POST" action="#"> 
+
+
+            {{ form.hidden_tag() }}
+          
+            {% if form.email.errors %}
+                {{ form.email(class="input_common_error",type="text",placeholder="Email") }}
+                <div class="invalid-feedback">
+                    {% for error in form.email.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% else %}
+                {{ form.email(class="input_common",type="text",placeholder="Email") }}
+            {% endif %}
+
+            {% if form.password.errors %}      
+                {{ form.password(class="input_common_error") }}
+                <div class="invalid-feedback">
+                    {% for error in form.password.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% else %}
+                {{ form.password(class="input_common",type="password",placeholder="Password") }}
+            {% endif %}
+
+            {{ form.submit(class="submit_common_btn") }}
+
+        
+        </form>
+        
+        <div class="member_login">                
+        <p>Not a member Yet ?</p><a href="{{ url_for('register') }}" class="a_login"><p>Join now</p></a>
+        </div>
+    </div>
+    
+                
+    
+
+</div>
+
+{% endblock content %}

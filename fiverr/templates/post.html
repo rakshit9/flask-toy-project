@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+{% block content %}
+
+
+
+<div class="body_post">
+
+    <div class="heading_post">
+
+        <div class="title_head_post">
+            <h1>{{ post.title }}
+                
+              <span>{{ post.date_posted.strftime('%Y-%m-%d') }}</span>
+            </h1>
+          </div>
+
+        <div class="user_main_btn_post">
+            <div class="user_data_home">         
+                <img src="{{ url_for('static', filename='profile_pics/' + post.author.user_image_file) }}" alt="Avatar" class="avatar_home">                            
+                <a class="mr-2" href="{{ url_for('user_posts', username=post.author.username) }}">
+                    <h4 class="user_name_home"><b>{{ post.author.username }}</b></h4>                    
+                </a>          
+            </div>
+            <div class="btn_set_post">
+
+                {% if post.author == current_user %}
+                <div class="button_display deco">
+                <a href="{{ url_for('update_post', post_id=post.id) }}">
+                    <p class="update_post_dashbord">
+                        Update
+                    </p>
+                </a>
+                
+                <form action="{{ url_for('delete_post', post_id=post.id) }}" method="POST">
+                    <input class="delete_post_dashbord" type="submit" value="Delete">
+                  </form>
+                </div>
+                {% else %}
+                    <button class="buy_btn_post"> Continue ${{ post.price }} </button>        
+            {% endif %}
+
+        
+            </div>
+        </div>
+        
+        
+    </div>
+
+    <div class="work_image_post">
+        <img class="image_post" width="460" height="345" src="{{ url_for('static', filename='post_pics/' + post.post_image_file) }}">
+        
+    </div>
+
+
+    <div class="body_dis_post">
+        <h1 class="body_about_post">About The Gig</h1>
+        <p class="body_about_discription_post">
+            {{ post.content }}
+        </p>        
+    </div>
+    <div class="category_post">
+        <h3 class="category_head">category</h3>
+        <p class="category_name">{{ post.category }}</p>
+    </div>
+    <div class="about_the_seller">
+        <img src="{{ url_for('static', filename='profile_pics/' + post.author.user_image_file) }}" alt="Avatar" class="avatar_user_photo">            
+        <a class="mr-2" href="{{ url_for('user_posts', username=post.author.username) }}">
+            <h4 class="user_name_home"><b>{{ post.author.username }}</b></h4>                    
+        </a>   
+        <button class="contact_btn_post">Contact me</button>
+    </div>
+</div>
+
+
+
+
+
+
+
+{% endblock content %}

@@ -1,0 +1,123 @@
+
+
+@media all and (min-width: 20px) {
+
+    .home_admin{
+      /* text-align: center; */
+    text-align: center;
+      font-family: macan,helvetica neue,Helvetica,Arial,sans-serif;
+      margin-left: 5%;
+      margin-right: 5%;
+    }
+ 
+    
+  
+    .card_post_home_admin{
+        margin-top: 15%;
+        display: grid;    
+        grid-template-columns: repeat(1, 1fr);
+        margin-left: 5%;
+        margin-right: 5%;
+        margin-bottom: 5%;
+        grid-gap: 1em;
+  
+    }
+    .user_img_admin{
+        max-width: 100%;
+        height: auto;
+        padding-top: .2em;
+        padding-bottom: .2em;
+
+    }
+    a{
+        text-decoration: none;
+    }
+ 
+    .user_card_admin{
+        text-align: center;
+        display: inline-block;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  
+    }
+    .user_card_admin:hover{
+        
+        box-shadow: 0px 0px 8px .2px rgba(0,0,0,.1);
+    }
+    .user_data_admin{
+        
+        padding-top: .3em;
+        padding-left: .5em;
+
+        padding-bottom: 1em;
+        
+    }
+    .number_of_user{
+        color: #7a7d85;
+        padding-left: .5em;
+    }
+    a{
+        text-decoration: none;
+        
+        color: #7a7d85;
+    }
+    a:hover{
+        color: #1dbf73;
+    }
+
+  
+  }
+  
+  
+  
+  
+  @media all and (min-width: 500px) {
+  
+    .card_post_home_admin{
+        
+        display: grid;    
+        grid-template-columns: repeat(1, 1fr);
+        margin-top: 2%;
+        margin-left: 1%;
+        margin-right: 1%;
+        /* margin-bottom: 15%; */
+        grid-gap: 4em;
+
+    }
+  }
+
+ 
+  @media all and (min-width: 700px) {
+    .card_post_home_admin{
+        
+        display: grid;    
+        grid-template-columns: repeat(2, 1fr);
+        margin-top: 2%;
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+  
+   
+  }
+  
+  
+  
+  
+  @media all and (min-width: 900px) {
+    .card_post_home_admin{
+        
+        display: grid;    
+        grid-template-columns: repeat(2, 1fr);
+        margin-top: 2%;
+        margin-left: 30%;
+        margin-right: 30%;    
+        grid-gap: 6em;
+    }
+  
+  }
+  
+  
+  
+  
+  
+  
+  

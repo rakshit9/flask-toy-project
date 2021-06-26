@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+{% block content %}
+
+
+<div class="body_account">
+    
+    <img src="{{ user_image_file }}" alt="Avatar" class="avatar_user_photo">
+
+    <h1 class="head_account">{{ current_user.username}}</h1>
+    <h1 class="head_account">{{ current_user.email}}</h1>
+  
+    
+    <form method="POST" action="" enctype="multipart/form-data">
+
+
+        {{ form.hidden_tag() }}
+
+        {% if form.username.errors %}
+            {{ form.username(class="input_common_error",type="text") }}
+            <div class="invalid-feedback">
+                {% for error in form.username.errors %}
+                    <span>{{ error }}</span>
+                {% endfor %}
+            </div>
+        {% else %}
+            {{ form.username(class="input_common",type="text") }}
+        {% endif %}
+
+    
+
+        {% if form.email.errors %}
+            {{ form.email(class="input_common_error",type="text") }}
+            <div class="invalid-feedback">
+                {% for error in form.email.errors %}
+                    <span>{{ error }}</span>
+                {% endfor %}
+            </div>
+        {% else %}
+            {{ form.email(class="input_common",type="text") }}
+        {% endif %}
+
+        
+        {% if form.picture.errors %}
+            {{ form.picture() }}
+            <div class="invalid-feedback">
+                {% for error in form.picture.errors %}
+                    <span>{{ error }}</span>
+                {% endfor %}
+            </div>
+        {% else %}
+            {{ form.picture(class=file) }}
+        {% endif %}
+
+        {{ form.submit(class="submit_common_btn") }}
+
+        
+    </form>
+
+</div>
+
+
+
+{% endblock content %}

@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+{% block content %}
+
+
+
+
+<div class="body_userlist">
+    
+    <div class="title_head">
+        <h1>{{title}}</h1>
+      </div>
+      
+    
+    <div class="user_card_grid">
+        
+        {% for user in users %}
+        <div class="user_card">
+            
+            <div class="contant_user_data">
+                
+                <div class="contant_img">
+                    <img src="{{ url_for('static', filename='profile_pics/' + user.user_image_file) }}" alt="Avatar" class="user_img">
+                      
+                </div>
+                <div class="contant_data">
+                    <div class="contant_sub">
+                        <h2 class="contant_head">Username:</h2>
+                        <p class="contant_value">{{ user.username }}</p>
+                        </div>
+                    
+                    <div class="contant_sub">
+                        <h2 class="contant_head">Email:</h2>
+                        <p class="contant_value">{{ user.email }}</p>
+                    </div>
+                    {% if user.is_valid %}
+                    <form action="{{ url_for('user_vailded', user_id=user.id) }}" method="POST">
+                        <input class="block_user" type="submit" value="Block">
+                    </form>
+                    {% else %}
+                        <form action="{{ url_for('user_vailded', user_id=user.id) }}" method="POST">
+                            <input class="unblock_user" type="submit" value="Unblock">
+                        </form>
+                    {% endif %}
+                </div>
+                
+            </div>
+            
+        </div>
+        {% endfor %}
+    </div>
+
+ </div>
+
+
+
+
+
+
+{% endblock content %}

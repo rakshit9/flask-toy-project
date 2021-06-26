@@ -1,0 +1,235 @@
+.body_post{
+    font-family: macan,helvetica neue,Helvetica,Arial,sans-serif;
+    margin-right: 5%;
+    margin-left:5%;
+    /* color: #404145; */
+    
+}
+
+
+
+h1 {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    font-family: "Raleway", sans-serif;
+    font-weight: 300;
+    font-size: 40px;
+    color: #404145;
+    -webkit-transition: all 0.4s ease 0s;
+    -o-transition: all 0.4s ease 0s;
+    transition: all 0.4s ease 0s;
+  }
+  
+  h1 span {
+    display: block;
+    font-size: 0.5em;
+    line-height: 1.3;
+  }
+  h1 em {
+    font-style: normal;
+    font-weight: 600;
+  }
+  
+  .title_head_post h1 {
+    text-transform: capitalize;
+    padding-top: .5em;
+
+  }
+  .title_head_post h1:before {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 60px;
+    height: 2px;
+    content: "";
+    background-color: #1DBF73;
+  }
+  
+  .title_head_post h1 span {
+    font-size: 13px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    line-height: 3em;
+    padding-left: 0.25em;
+    color: rgba(0, 0, 0, 0.4);
+    padding-bottom: 10px;
+  }
+  .alt-title_head_post h1 {
+    text-align:center;
+  }
+  .alt-title_head_post h1:before {
+    left:50%; margin-left:-30px;
+  }
+
+.work_image_post{
+    margin-top: 2%;
+
+  }
+.image_post{
+    width: 100%;
+    height: auto;
+    
+    
+}
+.body_about_post{
+    margin-top: 1em;
+    font-weight: 500;
+    padding-left: .2em;
+    font-size: 1.5em;
+    color: #404145;
+}
+
+.body_about_discription_post{
+    margin-top: .4em;
+    font-weight: 500;
+    padding-left: .2em;
+    font-size: 1em;
+    color: #524f4f;
+}
+
+
+.category_head{
+    margin-top: 1em;
+    margin-bottom: .5em;
+    font-size: 1.5em;
+    font-weight: 500;
+}
+.category_name{
+    font-size: 1em;
+    color: #524f4f;
+}
+.about_the_seller{
+    text-align: center;
+}
+
+.avatar_user_photo{
+    margin-top: 1em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    vertical-align: middle;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+.contact_btn_post{
+    
+    border: none;
+    padding: 12px 7em;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1em;
+    /* margin: 4px 2px; */
+    margin-bottom: 10%;
+    cursor: pointer;
+    background-color: white;
+    color: black;
+    border: 2px solid #e7e7e7;
+    border-radius: 5px;
+    
+    color: #62646A;
+}
+
+.buy_btn_post{
+
+    padding: 10px 2em;
+    float: right;
+    background-color: #1DBF73;
+    color: #fff;
+    font-weight: 500;
+    font-size: 1.3em;
+    border-radius: 7px;
+    border:none;
+
+}
+.deco{
+    float: right;
+}
+.user_main_btn_post{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+@media all and (min-width: 20px) {
+
+  
+  }
+  
+  
+  
+  
+  @media all and (min-width: 500px) {
+   
+    .body_post{
+        font-family: macan,helvetica neue,Helvetica,Arial,sans-serif;
+        margin-right: 15%;
+        margin-left:15%;
+        /* color: #404145; */
+        
+    }
+
+
+
+
+  }
+
+ 
+  @media all and (min-width: 700px) {
+   
+    
+    .body_post{
+        font-family: macan,helvetica neue,Helvetica,Arial,sans-serif;
+        margin-right: 15%;
+        margin-left:15%;
+        /* color: #404145; */
+        
+    }
+  }
+  
+  
+  
+  
+  @media all and (min-width: 1000px) {
+    .body_post{
+        font-family: macan,helvetica neue,Helvetica,Arial,sans-serif;
+        margin-right: 20%;
+        margin-left:20%;
+        /* color: #404145; */
+        
+    }
+    
+  
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  

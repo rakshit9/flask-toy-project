@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+{% block content %}
+
+
+<div class="home_admin">
+
+    <div class="card_post_home_admin">
+        
+            <a href="{{ url_for('user_list') }}">
+                <div class="user_card_admin">
+                    <img class="user_img_admin"src="{{ url_for('static', filename='userphoto.jpg') }}" alt="">                
+                    <div class="user_data_admin">
+                        <h3>Total Number of Freelancer</h3><h3 class="number_of_user">{{countuser}}</h3>
+                    </div>                   
+                </div>
+            </a>
+            <a href="{{ url_for('user_post_list') }}">
+            <div class="user_card_admin">
+                <img class="user_img_admin"src="{{ url_for('static', filename='geeklist.png') }}" alt="">                
+                <div class="user_data_admin">
+                    <h3>Total Number of Post</h3><h3 class="number_of_user">{{countpost}}</h3>
+                </div>                   
+            </div>
+        </a>
+
+    </div>
+
+</div>
+
+ 
+
+{% endblock content %}

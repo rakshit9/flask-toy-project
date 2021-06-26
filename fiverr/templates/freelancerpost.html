@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+{% block content %}
+
+
+
+<div class="post_home">
+    
+     
+    <div class="title_head">
+        <h1>{{title}}</h1>
+      </div>
+      
+    <div class="card_post_home">
+        {% for post in posts %}
+            <div class="post_items">
+                <a href="{{ url_for('post',post_id=post.id) }}">
+                    <img class="image_size_for_mobile"src="{{ url_for('static', filename='post_pics/' + post.post_image_file) }}" alt="">
+                
+                    <div class="post_detail_home">
+                        <div class="user_data_home"> 
+                            
+                            <img src="{{ url_for('static', filename='profile_pics/' + post.author.user_image_file) }}" alt="Avatar" class="avatar_home">
+                            
+                            <a class="mr-2" href="{{ url_for('user_posts', username=post.author.username) }}">
+                                <h4 class="user_name_home"><b>{{ post.author.username }}</b></h4>                    
+                            </a>          
+                        </div>
+                        <a href="{{ url_for('post',post_id=post.id) }}"><h3 class="post_title_home">{{ post.title }}</h3></a>            
+                    </div>
+                    <div class="product_price_home">
+                    <p> Price</p>
+                    <p class="price_home">${{ post.price }}</p>                
+                    </div>
+                </a>
+            </div>
+            
+
+        {% endfor %}
+    </div>    
+   
+       
+
+       
+   
+    
+</div>
+
+
+
+
+
+
+
+{% endblock content %}

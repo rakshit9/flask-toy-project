@@ -1,0 +1,79 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="body_create_post">
+
+        <h1 class="title_new_post">{{title}}</h1> 
+       
+        <form class="from_new_post" method="POST" action="#" enctype="multipart/form-data">
+            {{ form.hidden_tag() }}
+          
+
+            {% if form.title.errors %}
+                {{ form.title(class="input_common_error",type="text", placeholder="Title") }}
+                <div class="invalid-feedback">
+                    {% for error in form.title.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% else %}
+                {{ form.title(class="input_common",type="text", placeholder="Title") }}
+            {% endif %}
+
+
+            {% if form.content.errors %}
+                {{ form.content(class="input_common_error", cols="35", rows="20", placeholder="content") }}
+                <div class="invalid-feedback">
+                    {% for error in form.content.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% else %}
+               {{ form.content(class="input_common", cols="35", rows="10", placeholder="content") }}
+            {% endif %}
+
+            {% if form.category.errors %}
+                {{form.category()}}
+                <div class="invalid-feedback">
+                    {% for error in form.category.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% else %}
+                {{form.category()}}
+            {% endif %}
+
+            {% if form.price.errors %}
+                {{ form.price(class="input_common_error", placeholder="Price") }}
+                <div class="invalid-feedback">
+                    {% for error in form.price.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% else %}
+              {{ form.price(class="input_common", placeholder="Price") }}
+            {% endif %}
+
+            {% if form.post_image.errors %}
+                {{ form.post_image }}
+                <div class="invalid-feedback">
+                    {% for error in form.post_image.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% else %}
+                {{ form.post_image }}
+            {% endif %}
+
+
+            {{ form.submit(class="submit_common_btn") }}
+        </form>
+
+</div>
+
+
+
+
+{% endblock content %}
+
+
+

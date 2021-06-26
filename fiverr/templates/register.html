@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="body_register">
+
+    <div class="card_register">
+
+
+          <div class="one">
+            <h1>Sign Up to Fiverr</h1>
+          </div>
+
+        <h4 class="signup_text_register"><b></b></h4>                 
+        <form class="from_register" method="POST" action="#">
+            {{ form.hidden_tag() }}
+          
+
+            {% if form.username.errors %}
+                {{ form.username(class="input_common_error",type="text",placeholder="Username") }}
+                <div class="invalid-feedback">
+                    {% for error in form.username.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% else %}
+                {{ form.username(class="input_common",type="text",placeholder="Username") }}
+            {% endif %}
+
+
+
+            {% if form.email.errors %}
+                {{ form.email(class="input_common_error",type="text",placeholder="Email") }}
+                <div class="invalid-feedback">
+                    {% for error in form.email.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% else %}
+                {{ form.email(class="input_common",type="text",placeholder="Email") }}
+            {% endif %}
+
+
+            {% if form.password.errors %}                
+                {{ form.password(class="input_common_error") }}
+                <div class="invalid-feedback">
+                    {% for error in form.password.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% else %}
+                {{ form.password(class="input_common",type="password",placeholder="Password") }}
+            {% endif %}
+
+
+
+            {% if form.confirm_password.errors %}
+                {{ form.confirm_password(class="input_common_error",type="password",placeholder="confirm-password") }}
+                <div class="invalid-feedback">
+                    {% for error in form.confirm_password.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% else %}
+            {{ form.confirm_password(class="input_common",type="password",placeholder="confirm-password") }}
+            {% endif %}
+
+
+            {{ form.submit(class="submit_common_btn") }}
+
+        </form>
+        <div class="line_register">
+            <div class="member_register">                
+                <p>If You Already Signup ?</p><a href="{{ url_for('login') }}" class="a_register"><p>Sign In</p></a>
+            </div>
+        </div>
+        
+                
+    </div>
+
+</div>
+
+{% endblock content %}

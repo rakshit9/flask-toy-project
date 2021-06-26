@@ -1,0 +1,112 @@
+<html>
+    <head>
+        <title>xyz</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/home.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/login.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/register.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/create_post.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/dashboard.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/post.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/admin_home.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/userlist.css') }}">
+        <meta charset="UTF-8">
+    
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        {% if title %}
+            <title>Flask Blog - {{ title }}</title>
+        {% else %}
+            <title>Flask Blog</title>
+        {% endif %}
+    </head>
+    <body>
+       
+
+
+
+<div class="container">
+<div class="navbar">     
+    <div class="nav">     
+        {% if current_user.is_admin %}
+        <a href="{{ url_for('home_admin') }}">
+            <img class="_icon" src="{{ url_for('static', filename='logo.png') }}"/>                        
+        </a>
+        {% else %}
+            <a href="{{ url_for('home') }}">
+                <img class="_icon" src="{{ url_for('static', filename='logo.png') }}"/>                        
+            </a>
+        {% endif %}
+          
+        
+        <div class="nav_right">
+    
+            {% if current_user.is_authenticated %}
+                        
+                {% if current_user.is_admin %}
+                <a class="nav_right_btn" href="{{ url_for('home_admin') }}">Home</a>
+                {% else%}
+                    <a class="dash_btn" href="{{ url_for('dashboard') }}">Dashboard</a>
+                    <a class="nav_right_btn" href="{{ url_for('new_post') }}">New Post</a>
+
+                {%  endif %}
+                <a class="nav_right_btn" href="{{ url_for('account') }}">Account</a>
+                <a class="nav_right_btn" href="{{ url_for('logout') }}">Logout</a>    
+            {% else %}
+                <a href="{{ url_for('login') }}" class="nav_right_btn">Login</a>
+                <a href="{{ url_for('register') }}" class="join_btn">Join</a>
+            {% endif %}
+        
+            <span style="cursor:pointer" onclick="openNav()">
+                <img class="nav_icon sidebar"  src="{{ url_for('static', filename='sidebar.png') }}" alt="puma_logo"></img>
+            </span>
+        </div>
+    </div>
+    
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+
+
+        {% if current_user.is_admin %}
+        <a class="nav_right_btn" href="{{ url_for('home_admin') }}">Home</a>
+        {% else%}
+            <a href="{{ url_for('home') }}">Home</a>
+            <p class="cc"><a class="sidebar_dash_btn" href="{{ url_for('dashboard') }}">
+                Dashboard</a></p>
+            <a href="{{ url_for('new_post') }}">New post</a>
+
+        {%  endif %}      
+        <a href="{{ url_for('account') }}">Account</a>
+        {% if current_user.is_authenticated %}
+            <a class="nav-item nav-link" href="{{ url_for('logout') }}">Logout</a>
+        {% else %}
+            <a href="{{ url_for('login') }}" class="nav_right_btn">Login</a>
+        {% endif %}
+        
+    </div>
+    
+</div>
+<div class="line"></div>
+</div>
+
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="{{category}}">
+                <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    {% block content %}{% endblock %}
+                          
+          </main>
+
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>   
+
+    </body>
+</html>
